@@ -1,8 +1,13 @@
 <div id="app-component">
 
-  <textarea></textarea>
+  <section id="form-search">
+    <input id="search-input" placeholder="Search Twitter">
+    <button id="search-btn">
+      <i class="fas fa-search"></i>
+    </button>
+  </section>
 
-  <section *ngFor="let tweet of tweets">
+  <section class="timeline" *ngFor="let tweet of tweets">
     <app-timeline [tweet]="tweet"></app-timeline>
   </section>
 
