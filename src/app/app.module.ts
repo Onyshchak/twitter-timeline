@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { TimelineComponent } from './timeline/timeline.component';
+import { TweetService } from './tweet.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { TimelineComponent } from './timeline/timeline.component';
     MatInputModule,
     FormsModule
   ],
-  providers: [],
+  providers: [TweetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

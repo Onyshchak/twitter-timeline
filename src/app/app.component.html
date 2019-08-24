@@ -1,8 +1,11 @@
 <div id="app-component">
 
   <section id="form-search">
-    <input id="search-input" placeholder="Search Twitter">
-    <button id="search-btn">
+    <input
+      [(ngModel)]="userName"
+      id="search-input"
+      placeholder="Search Twitter" >
+    <button (click)="getTweets()" id="search-btn">
       <i class="fas fa-search"></i>
     </button>
   </section>

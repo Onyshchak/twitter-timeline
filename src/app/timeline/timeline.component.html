@@ -2,41 +2,39 @@
   <img class="timeline--avatar" src="{{tweet.img}}">
   <section class="timeline--content">
     <header class="timeline--content--user">
-      <span class="timeline--content--user--fullname">{{tweet.fullname}}</span>
+      <span class="timeline--content--user--fullname">{{tweet.fullName}}</span>
       <span class="timeline--content--user--nickname">@{{tweet.nickname}}</span>
       <span>&#183;</span>
       <span class="timeline--content--user--time">{{tweet.timePost}}</span>
     </header>
     <section class="timeline--content--tweet">
       {{tweet.tweetText}}
+      <div *ngIf="!!tweet.tweetImg">
+        <img src="{{tweet.tweetImg}}" class="timeline--content--tweet--image">
+      </div>
     </section>
     <footer class="timeline--actions">
 
       <button>
         <i class="icon far fa-comment"></i>
-        <span>{{tweet.actionsCount[0] || ''}}</span>
+        <span></span>
       </button>
 
       <button>
         <i class="icon fas fa-retweet"></i>
-        <span>{{tweet.actionsCount[1] || ''}}</span>
+        <span>{{tweet.actionsCount[0] || ''}}</span>
       </button>
 
       <button>
         <i class="icon far fa-heart"></i>
-        <span>{{tweet.actionsCount[2] || ''}}</span>
+        <span>{{tweet.actionsCount[1] || ''}}</span>
       </button>
 
       <button>
         <i class="icon far fa-envelope"></i>
-        <span>{{tweet.actionsCount[3] || ''}}</span>
+        <span></span>
       </button>
 
     </footer>
   </section>
 </div>
-
-<!--<img src="https://pbs.twimg.com/profile_images/1145602261596495878/SHlSRFV5_400x400.jpg">-->
-
-
-
