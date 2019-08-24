@@ -1,20 +1,28 @@
 const express = require('express');
-const app = express();
+const server = express();
 const cors = require('cors');
 const Twitter = require('twitter');
 
 const client = new Twitter({
-  consumer_key: '',
-  consumer_secret: '',
-  access_token_key: '',
-  access_token_secret: ''
+  consumer_key: 'K32wsGriavIfDSbVEOXHqJtEk',
+  consumer_secret: 'ZhB0Sb8E1MVNQ4dXOCPmAwI4m31WVAbmxqtTRCyoy4g9nlilzm',
+  access_token_key: '1112713784454451200-PqrsDzfRBJlt9LM9Uybwv27OJ1U018',
+  access_token_secret: 'KYSA62Idn9THGYrMDwLCsgjoRkYfP11Ecx6JXV9aC7cKz'
 });
 
-app.use(cors());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// server.use(cors());
+// server.use(express.urlencoded({ extended: true }));
+// server.use(express.json());
 
-app.get('/tweets/:name', async (req, res) => {
+server.use(express.static(__dirname + '/dist/twitter-timeline'));
+
+server.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname + '/dist/twitter-timeline/index.html'));
+});
+
+server.listen(process.env.PORT || 8080);
+
+server.get('/tweets/:name', async (req, res) => {
 
   const params = {screen_name: req.params.name, count: 30, tweet_mode:'extended'};
   const modifTweets = [];
@@ -48,4 +56,4 @@ app.get('/tweets/:name', async (req, res) => {
   }
 });
 
-app.listen(3000);
+// server.listen(3000);
