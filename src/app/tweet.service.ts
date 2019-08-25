@@ -13,6 +13,6 @@ export class TweetService {
   private tweetsUrlHeroku = 'https://twitter-timeline-256.herokuapp.com/';
 
   getTweets(name): Observable<Tweet[]> {
-    return this.http.get<Tweet[]>(this.tweetsUrlHeroku + name);
+    return this.http.get<Tweet[]>(this.tweetsUrl + name);
   }
 }
