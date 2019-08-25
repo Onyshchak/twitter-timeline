@@ -5,11 +5,11 @@ const Twitter = require('twitter');
 
 const app = express();
 
-app.use(cors());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(cors());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 
-app.use(express.static('.dist/twitter-timeline'));
+app.use(express.static('./dist/twitter-timeline'));
 
 const client = new Twitter({
   consumer_key: 'K32wsGriavIfDSbVEOXHqJtEk',
