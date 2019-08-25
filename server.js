@@ -20,7 +20,7 @@ const client = new Twitter({
 
 app.get('/tweets/:name', async (req, res) => {
 
-  const params = {screen_name: req.params.name, count: 32, tweet_mode:'extended'};
+  const params = {screen_name: req.params.name, count: 64, tweet_mode:'extended'};
   const modifTweets = [];
 
   try {
