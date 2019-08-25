@@ -8,6 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 app.use(express.static('.dist/twitter-timeline'));
 
 const client = new Twitter({

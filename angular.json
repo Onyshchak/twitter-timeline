@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-task": {
+    "twitter-timeline": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-task",
+            "outputPath": "dist/twitter-timeline",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-task:build"
+            "browserTarget": "twitter-timeline:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-task:build:production"
+              "browserTarget": "twitter-timeline:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-task:build"
+            "browserTarget": "twitter-timeline:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "angular-task-e2e": {
+    "twitter-timeline-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-task:serve"
+            "devServerTarget": "twitter-timeline:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-task:serve:production"
+              "devServerTarget": "twitter-timeline:serve:production"
             }
           }
         },
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "angular-task"
+  "defaultProject": "twitter-timeline"
 }
