@@ -14,6 +14,6 @@ export class TweetService {
 
   getTweets(name): Observable<Tweet[]> {
     console.log(this.tweetsUrl + name);
-    return this.http.get<Tweet[]>(this.tweetsUrl + name);
+    return this.http.get<Tweet[]>(this.tweetsUrlHeroku + name);
   }
 }
