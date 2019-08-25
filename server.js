@@ -18,7 +18,7 @@ const client = new Twitter({
   access_token_secret: 'KYSA62Idn9THGYrMDwLCsgjoRkYfP11Ecx6JXV9aC7cKz'
 });
 
-app.get('/tweets/:name', async (req, res) => {
+app.get('https://twitter-timeline-256.herokuapp.com/:name', async (req, res) => {
 
   const params = {screen_name: req.params.name, count: 32, tweet_mode:'extended'};
   const modifTweets = [];

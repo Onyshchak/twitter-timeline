@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get('/tweets/:name', async (req, res) => {
+app.get('/:name', async (req, res) => {
 
   const params = {screen_name: req.params.name, count: 30, tweet_mode:'extended'};
   const modifTweets = [];
