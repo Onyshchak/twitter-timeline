@@ -11,11 +11,12 @@ app.use(express.json());
 
 app.use(express.static('./dist/twitter-timeline'));
 
+// Fill next 4 fields for access to Twitter API
 const client = new Twitter({
-  consumer_key: '1Rmi2Iivm7v09kQxxK7RMQtnx',
-  consumer_secret: 'UArX24N7LfTjmp8S3wFxTztd4J6eThV9oAGzRBhqoQNs3yeKss',
-  access_token_key: '1112713784454451200-OEKJfpNlbuWoNGvTU4Vm0vxKMQt3Sz',
-  access_token_secret: 'qhblyHEtl0xVCfIy8fdqgsvCBXjEyqwmwqKqlFEMH2fsq'
+  consumer_key: '',
+  consumer_secret: '',
+  access_token_key: '',
+  access_token_secret: ''
 });
 
 app.get('/tweets/:name', async (req, res) => {
