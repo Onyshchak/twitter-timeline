@@ -10,6 +10,7 @@ export class TweetService {
   constructor(private http: HttpClient) {}
 
   private tweetsUrlHeroku = 'https://twitter-timeline-256.herokuapp.com/tweets/';
+  private tweetsUrl = 'http://localhost:3000/tweets/';
 
   getTweets(name): Observable<Tweet[]> {
     return this.http.get<Tweet[]>(this.tweetsUrlHeroku + name);

@@ -12,15 +12,14 @@ app.use(express.json());
 app.use(express.static('./dist/twitter-timeline'));
 
 const client = new Twitter({
-  consumer_key: 'K32wsGriavIfDSbVEOXHqJtEk',
-  consumer_secret: 'ZhB0Sb8E1MVNQ4dXOCPmAwI4m31WVAbmxqtTRCyoy4g9nlilzm',
-  access_token_key: '1112713784454451200-PqrsDzfRBJlt9LM9Uybwv27OJ1U018',
-  access_token_secret: 'KYSA62Idn9THGYrMDwLCsgjoRkYfP11Ecx6JXV9aC7cKz'
+  consumer_key: '1Rmi2Iivm7v09kQxxK7RMQtnx',
+  consumer_secret: 'UArX24N7LfTjmp8S3wFxTztd4J6eThV9oAGzRBhqoQNs3yeKss',
+  access_token_key: '1112713784454451200-OEKJfpNlbuWoNGvTU4Vm0vxKMQt3Sz',
+  access_token_secret: 'qhblyHEtl0xVCfIy8fdqgsvCBXjEyqwmwqKqlFEMH2fsq'
 });
 
 app.get('/tweets/:name', async (req, res) => {
-
-  const params = {screen_name: req.params.name, count: 64, tweet_mode:'extended'};
+  const params = {screen_name: req.params.name, count: 32, tweet_mode:'extended'};
   const modifTweets = [];
 
   try {
@@ -28,8 +27,6 @@ app.get('/tweets/:name', async (req, res) => {
       if (error)
         throw error;
       tweets.forEach(tweet => {
-        if (!!tweet.entities.user_mentions.length) return;
-
         let image = null;
         if (!!tweet.entities.media)
           image = tweet.entities.media[0].media_url;
